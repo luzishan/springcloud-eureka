@@ -1,0 +1,23 @@
+#指定端口号
+server:
+  port: 7002
+
+#指定服务名称
+spring:
+  application:
+    name: eureka-server
+
+#指定服务地址
+eureka:
+  instance:
+    hostname: eureka7002.com
+  client:
+    register-with-eureka: false #指定是否要注册到注册中心（注册中心不需要开启）
+    fetch-registry: false #指定是否要从注册中心获取服务（注册中心不需要开启）
+      #设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址。
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7003.com:7003/eureka/
+  server:
+    enable-self-preservation: false #关闭保护模式
+
+
